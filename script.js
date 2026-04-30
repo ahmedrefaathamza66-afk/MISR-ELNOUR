@@ -22,7 +22,7 @@ const categories = [
     id: 'thermo4',
     name: 'ترمو (4 طرف)',
     unit: 'مم²',
-    icon: '🔌',
+    // icon: '🔌',
     color: '#1e3a6e',
     items: [
       { size: '0.5×4', basePrice: 2600 },
@@ -44,7 +44,7 @@ const categories = [
     id: 'nehyas',
     name: 'نحاس',
     unit: 'مم²',
-    icon: '🟠',
+    // icon: '🟠',
     color: '#b45309',
     items: [
       { size: '1', basePrice: 855 },
@@ -68,7 +68,7 @@ const categories = [
     id: 'shaar',
     name: 'شعر',
     unit: 'مم²',
-    icon: '🔶',
+    // icon: '🔶',
     color: '#d97706',
     items: [
       { size: '1', basePrice: 875 },
@@ -92,7 +92,7 @@ const categories = [
     id: 'aluminium',
     name: 'الألمنيوم',
     unit: 'مم²',
-    icon: '⚡',
+    // icon: '⚡',
     color: '#6b7280',
     items: [
       { size: '10', basePrice: 1200 },
@@ -109,7 +109,7 @@ const categories = [
     id: 'thermo2',
     name: 'ترمو (2 طرف)',
     unit: 'مم²',
-    icon: '🔵',
+    // icon: '🔵',
     color: '#1d4ed8',
     items: [
       { size: '0.5×2', basePrice: 1360 },
@@ -129,7 +129,7 @@ const categories = [
     id: 'thermo3',
     name: 'ترمو (3 طرف)',
     unit: 'مم²',
-    icon: '🟢',
+      // icon: '🟢',
     color: '#15803d',
     items: [
       { size: '0.5×3', basePrice: 2020 },
@@ -149,7 +149,7 @@ const categories = [
     id: 'smaaat',
     name: 'سماعات / محدول',
     unit: 'مم²',
-    icon: '🎙️',
+    // icon: '🎙️',
     color: '#7c3aed',
     items: [
       { size: '0.5×2 ألوان', basePrice: 945 },
@@ -165,7 +165,7 @@ const categories = [
     id: 'telephone',
     name: 'تليفون',
     unit: 'جوز',
-    icon: '📞',
+    // icon: '📞',
     color: '#0891b2',
     items: [
       { size: '1 جوز', basePrice: 650 },
@@ -181,7 +181,7 @@ const categories = [
     id: 'control',
     name: 'كنترول',
     unit: 'مم²',
-    icon: '🟡',
+    // icon: '🟡',
     color: '#ca8a04',
     items: [
       { size: '0.5×7', basePrice: 4300 },
@@ -504,8 +504,7 @@ function renderTabs() {
              background:${activeTabId === cat.id ? cat.color : '#fff'};
              color:${activeTabId === cat.id ? '#fff' : '#374151'}"
       onclick="switchTab('${cat.id}')"
-    >${cat.icon} ${cat.name}</button>
-  `).join('');
+>${cat.icon || ''} ${cat.name}</button>  `).join('');
 }
 
 function renderTable() {
@@ -514,8 +513,7 @@ function renderTable() {
   // Header
   document.getElementById('table-header').innerHTML = `
     <div style="background:${cat.color};padding:18px 28px;display:flex;align-items:center;gap:12px">
-      <span class="th-icon">${cat.icon}</span>
-      <div>
+    ${cat.icon ? `<span class="th-icon">${cat.icon}</span>` : ''}      <div>
         <div class="th-name">${cat.name}</div>
         <div class="th-sub">قائمة الأسعار — اللفة <span class="num">100</span> متر — خصم <span class="num">${DISCOUNT_PERCENT}</span>%</div>
       </div>
@@ -525,24 +523,23 @@ function renderTable() {
   const tbody = document.getElementById('price-tbody');
   tbody.innerHTML = cat.items.map(item => {
     const disc = calcDiscounted(item.basePrice);
-    const save = item.basePrice - disc;
     const btnId = `btn-${cat.id}-${item.size}`.replace(/[^a-zA-Z0-9-_]/g, '_');
+
     return `
-      <tr>
-        <td class="text-right" style="font-weight:700;color:#1e3a6e">
-          <span class="num">${item.size}</span>
-          <span style="font-size:12px;color:#64748b"> ${cat.unit}</span>
-        </td>
-        <td><span class="base-price num">${fmt(item.basePrice)}</span></td>
-        <td><span class="disc-price num">${fmt(disc)}</span></td>
-        <td><span class="saving-badge num">-${fmt(save)}</span></td>
-        <td>
-          <button class="add-btn" id="${btnId}"
-            onclick="handleAddBtn('${cat.id}','${item.size}','${btnId}')">
-            + أضف للسلة
-          </button>
-        </td>
-      </tr>`;
+    <tr>
+      <td class="text-right" style="font-weight:700;color:#1e3a6e">
+        <span class="num">${item.size}</span>
+        <span style="font-size:12px;color:#64748b"> ${cat.unit}</span>
+      </td>
+      <td><span class="base-price num">${fmt(item.basePrice)}</span></td>
+      <td><span class="disc-price num">${fmt(disc)}</span></td>
+      <td>
+        <button class="add-btn" id="${btnId}"
+          onclick="handleAddBtn('${cat.id}','${item.size}','${btnId}')">
+          + أضف للسلة
+        </button>
+      </td>
+    </tr>`;
   }).join('');
 
   // Footer
@@ -590,8 +587,7 @@ function renderCategoryCards() {
     return `
       <div class="cat-card" onclick="scrollToSection('prices');switchTab('${cat.id}')">
         <div class="cat-card-head" style="background:${cat.color}">
-          <div class="cat-icon-wrap">${cat.icon}</div>
-          <div>
+        ${cat.icon ? `<div class="cat-icon-wrap">${cat.icon}</div>` : ''}          <div>
             <div class="cat-card-title">${cat.name}</div>
             <div class="cat-card-count"><span class="num">${cat.items.length}</span> مقاس متوفر</div>
           </div>
@@ -619,7 +615,7 @@ function renderCategoryCards() {
 // Gallery / Lightbox
 // =====================================================
 const galleryImages = [
-  { src: '../images/product1.jpg', title: 'كابل نحاس 6 مم²', desc: 'كابل مقاوم للحريق — نحاس مستورد بدرجة نقاء 99.9%' },
+  { src: './images/product1.jpg', title: 'كابل نحاس 6 مم²', desc: 'كابل مقاوم للحريق — نحاس مستورد بدرجة نقاء 99.9%' },
   { src: '../images/product2.jpg', title: 'مخزن الكابلات',   desc: 'مخزن متكامل بجميع أنواع وأحجام الكابلات' },
   { src: '../images/product3.jpg', title: 'نحاس عالي النقاء', desc: 'مقطع عرضي لكابل النحاس بدرجة نقاء 99.9%' },
 ];

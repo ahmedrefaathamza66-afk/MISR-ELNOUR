@@ -59,9 +59,9 @@ body { direction: rtl; background: #f0f4f8; color: #1e293b; }
 .header-actions { display: flex; align-items: center; gap: 10px; }
 .cart-btn {
   position: relative;
-  background: linear-gradient(135deg, #f59e0b, #ef4444);
+  background: linear-gradient(135deg, #28170a, );
   border: none; border-radius: 12px; padding: 8px 16px;
-  cursor: pointer; color: #fff; font-weight: 800;
+  cursor: pointer; color: #f59e0b; font-weight: 800;
   font-size: 15px; display: flex; align-items: center; gap: 7px;
   font-family: 'Cairo', sans-serif;
 }
@@ -270,7 +270,7 @@ body { direction: rtl; background: #f0f4f8; color: #1e293b; }
 .price-table tr:nth-child(even) td { background: #f8fafc; }
 .price-table tr:hover td { background: #eef3fb; }
 .base-price { text-decoration: line-through; color: #94a3b8; font-size: 14px; }
-.disc-price { color: #ef4444; font-weight: 900; font-size: 16px; }
+.disc-price { color: #16a34a; font-weight: 900; font-size: 16px; }
 .saving-badge {
   background: #dcfce7; color: #16a34a;
   border-radius: 6px; padding: 3px 8px;
@@ -627,3 +627,76 @@ body { direction: rtl; background: #f0f4f8; color: #1e293b; }
   transition: transform 0.2s;
 }
 .whatsapp-float:hover { transform: scale(1.1); }
+
+html,
+body {
+  overflow-x: hidden;
+}
+
+
+.table-wrap {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.price-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  overflow-x: hidden;
+}
+
+
+
+
+
+/* @media (max-width: 768px) {
+
+  .price-table thead {
+    display: none;
+  }
+
+  .price-table,
+  .price-table tbody,
+  .price-table tr,
+  .price-table td {
+    display: block;
+    width: 100%;
+  }
+
+  .price-table tr {
+    margin-bottom: 15px;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 12px;
+    background: #fff;
+  }
+
+  .price-table td {
+    text-align: right;
+    padding: 6px 0;
+    border: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .price-table td::before {
+    content: attr(data-label);
+    font-weight: 700;
+    color: #1e3a6e;
+  }
+
+  .add-btn {
+    width: 100%;
+    margin-top: 8px;
+  }
+
+} */
