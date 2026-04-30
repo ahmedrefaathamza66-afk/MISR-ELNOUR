@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -9,249 +10,310 @@
   <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
 
-<!-- ============================== HEADER ============================== -->
-<header id="main-header">
-  <div class="header-inner">
-    <div class="logo">
-      <div class="logo-icon">⚡</div>
-      <div class="logo-text">
-        <div class="logo-name">مصر النور للكابلات</div>
-        <div class="logo-sub">خصم <span class="num" id="header-discount"></span>% على جميع الأصناف</div>
+  <!-- ============================== HEADER ============================== -->
+  <header id="main-header">
+    <div class="header-inner">
+      <div class="logo">
+        <div class="logo-icon">⚡</div>
+        <div class="logo-text">
+          <div class="logo-name">مصر النور للكابلات</div>
+          <div class="logo-sub">خصم <span class="num" id="header-discount"></span>% على جميع الأصناف</div>
+        </div>
+      </div>
+      <nav class="main-nav" id="main-nav">
+        <button class="nav-btn active" data-section="home">الرئيسية</button>
+        <button class="nav-btn" data-section="products">المنتجات</button>
+        <button class="nav-btn" data-section="prices">الأسعار</button>
+        <button class="nav-btn" data-section="gallery">معرض الصور</button>
+        <button class="nav-btn" data-section="contact">تواصل معنا</button>
+      </nav>
+      <div class="header-actions">
+        <button class="cart-btn" id="cart-btn">
+          🛒 السلة
+          <span class="cart-badge hidden" id="cart-badge">0</span>
+        </button>
+        <button class="mobile-menu-btn" id="mobile-menu-btn">☰</button>
       </div>
     </div>
-    <nav class="main-nav" id="main-nav">
+    <!-- Mobile Nav -->
+    <div class="mobile-nav hidden" id="mobile-nav">
       <button class="nav-btn active" data-section="home">الرئيسية</button>
       <button class="nav-btn" data-section="products">المنتجات</button>
       <button class="nav-btn" data-section="prices">الأسعار</button>
       <button class="nav-btn" data-section="gallery">معرض الصور</button>
       <button class="nav-btn" data-section="contact">تواصل معنا</button>
-    </nav>
-    <div class="header-actions">
-      <button class="cart-btn" id="cart-btn">
-        🛒 السلة
-        <span class="cart-badge hidden" id="cart-badge">0</span>
-      </button>
-      <button class="mobile-menu-btn" id="mobile-menu-btn">☰</button>
     </div>
-  </div>
-  <!-- Mobile Nav -->
-  <div class="mobile-nav hidden" id="mobile-nav">
-    <button class="nav-btn active" data-section="home">الرئيسية</button>
-    <button class="nav-btn" data-section="products">المنتجات</button>
-    <button class="nav-btn" data-section="prices">الأسعار</button>
-    <button class="nav-btn" data-section="gallery">معرض الصور</button>
-    <button class="nav-btn" data-section="contact">تواصل معنا</button>
-  </div>
-</header>
+  </header>
 
-<!-- ============================== HERO ============================== -->
-<section id="home" class="hero">
-  <div class="hero-decor hero-decor-1"></div>
-  <div class="hero-decor hero-decor-2"></div>
-  <div class="hero-content">
-    <div class="hero-badge">📞 للتواصل: <span class="num">01001897864</span></div>
-    <div class="hero-sub">⚡ شركة متخصصة في الكابلات الكهربائية</div>
-    <h1 class="hero-title">مصر النور للكابلات</h1>
-    <p class="hero-desc">
-      نوفر أجود أنواع الكابلات الكهربائية بأفضل الأسعار<br>
-      قائمة أسعار اللفة <span class="num">(100 متر)</span> — خصم
-      <span class="accent" id="hero-discount"></span>
-      على جميع الأصناف
-    </p>
-    <div class="hero-stats">
-      <div class="stat-card"><div class="stat-val num">9+</div><div class="stat-lbl">صنف متوفر</div></div>
-      <div class="stat-card"><div class="stat-val num">100م</div><div class="stat-lbl">حجم اللفة</div></div>
-      <div class="stat-card"><div class="stat-val num" id="stat-discount"></div><div class="stat-lbl">خصم فوري</div></div>
-      <div class="stat-card"><div class="stat-val num">99.9%</div><div class="stat-lbl">نقاء النحاس</div></div>
-    </div>
-    <div class="hero-cta">
-      <button class="btn-primary" onclick="scrollToSection('prices')">🛒 تصفح الأسعار واطلب الآن</button>
-      <a class="btn-whatsapp" href="https://wa.me/201001897864" target="_blank">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="#fff"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.09.543 4.05 1.49 5.757L0 24l6.345-1.663A11.945 11.945 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.797 9.797 0 01-4.996-1.371l-.358-.213-3.768.988.989-3.668-.233-.378A9.82 9.82 0 012.182 12C2.182 6.57 6.57 2.182 12 2.182S21.818 6.57 21.818 12 17.43 21.818 12 21.818z"/></svg>
-        تواصل واتساب
-      </a>
-    </div>
-  </div>
-</section>
-
-<!-- ============================== PRODUCTS OVERVIEW ============================== -->
-<section id="products" class="section-white">
-  <div class="container">
-    <div class="section-header">
-      <h2 class="section-title">أصنافنا المتوفرة</h2>
-      <p class="section-desc"><span class="num">9</span> أصناف متوفرة — خصم <span class="accent" id="products-discount"></span> على جميع الأصناف</p>
-    </div>
-    <div class="cards-grid" id="categories-grid"></div>
-  </div>
-</section>
-
-<!-- ============================== PRICE TABLE ============================== -->
-<section id="prices" class="section-gray">
-  <div class="container">
-    <div class="section-header">
-      <h2 class="section-title">قائمة أسعار اللفة (100 متر)</h2>
-      <p class="section-desc">جميع الأسعار بعد خصم <span class="red num" id="prices-discount"></span>% — أضف المنتجات للسلة وأكد طلبك</p>
-    </div>
-    <!-- Tabs -->
-    <div class="tabs" id="cat-tabs"></div>
-    <!-- Table Card -->
-    <div class="table-card">
-      <div class="table-header" id="table-header"></div>
-      <div class="table-wrap">
-        <table class="price-table" id="price-table">
-          <thead>
-            <tr>
-              <th class="text-right">المقاس</th>
-              <th>السعر الأساسي (ج.م)</th>
-              <th class="golden">بعد الخصم (ج.م)</th>
-              <!-- <th>التوفير</th> -->
-              <th>إضافة للسلة</th>
-            </tr>
-          </thead>
-          <tbody id="price-tbody"></tbody>
-        </table>
-      </div>
-      <div class="table-footer" id="table-footer"></div>
-    </div>
-  </div>
-</section>
-
-<!-- ============================== GALLERY ============================== -->
-<section id="gallery" class="section-white">
-  <div class="container">
-    <div class="section-header">
-      <h2 class="section-title">معرض منتجاتنا</h2>
-      <p class="section-desc">تعرف على جودة منتجاتنا من الكابلات الكهربائية المصرية</p>
-    </div>
-    <div class="gallery-grid">
-      <div class="gallery-card" onclick="openLightbox(0)">
-        <img src="../images/product1.jpg" alt="كابل نحاس 6مم" />
-        <div class="gallery-overlay">
-          <div class="gallery-title">كابل نحاس 6 مم²</div>
-          <div class="gallery-desc">كابل مقاوم للحريق — نحاس مستورد بدرجة نقاء 99.9%</div>
+  <!-- ============================== HERO ============================== -->
+  <section id="home" class="hero">
+    <div class="hero-decor hero-decor-1"></div>
+    <div class="hero-decor hero-decor-2"></div>
+    <div class="hero-content">
+      <div class="hero-badge">📞 للتواصل: <span class="num">01001897864</span></div>
+      <div class="hero-sub">⚡ شركة متخصصة في الكابلات الكهربائية</div>
+      <h1 class="hero-title">مصر النور للكابلات</h1>
+      <p class="hero-desc">
+        نوفر أجود أنواع الكابلات الكهربائية بأفضل الأسعار<br>
+        قائمة أسعار اللفة <span class="num">(100 متر)</span> — خصم
+        <span class="accent" id="hero-discount"></span>
+        على جميع الأصناف
+      </p>
+      <div class="hero-stats">
+        <div class="stat-card">
+          <div class="stat-val num">9+</div>
+          <div class="stat-lbl">صنف متوفر</div>
         </div>
-        <div class="gallery-zoom">🔍 تكبير</div>
-      </div>
-      <div class="gallery-card" onclick="openLightbox(1)">
-        <img src="../images/product2.jpg" alt="مخزن الكابلات" />
-        <div class="gallery-overlay">
-          <div class="gallery-title">مخزن الكابلات</div>
-          <div class="gallery-desc">مخزن متكامل بجميع أنواع وأحجام الكابلات</div>
+        <div class="stat-card">
+          <div class="stat-val num">100م</div>
+          <div class="stat-lbl">حجم اللفة</div>
         </div>
-        <div class="gallery-zoom">🔍 تكبير</div>
-      </div>
-      <div class="gallery-card" onclick="openLightbox(2)">
-        <img src="../images/product3.jpg" alt="نحاس عالي النقاء" />
-        <div class="gallery-overlay">
-          <div class="gallery-title">نحاس عالي النقاء</div>
-          <div class="gallery-desc">مقطع عرضي لكابل النحاس بدرجة نقاء 99.9%</div>
+        <div class="stat-card">
+          <div class="stat-val num" id="stat-discount"></div>
+          <div class="stat-lbl">خصم فوري</div>
         </div>
-        <div class="gallery-zoom">🔍 تكبير</div>
-      </div>
-    </div>
-    <!-- Features -->
-    <div class="features-grid">
-      <div class="feature-card"><div class="feature-icon">🛡️</div><div class="feature-title">مقاوم للحريق</div><div class="feature-desc">كابلات مصممة لتحمل درجات الحرارة العالية</div></div>
-      <div class="feature-card"><div class="feature-icon">🥇</div><div class="feature-title">جودة مضمونة</div><div class="feature-desc">نحاس مستورد بدرجة نقاء تصل 99.9%</div></div>
-      <div class="feature-card"><div class="feature-icon">📏</div><div class="feature-title">لفة 100 متر</div><div class="feature-desc">كل لفة 100 متر معيارية مع تسامح دقيق</div></div>
-      <div class="feature-card"><div class="feature-icon">🏭</div><div class="feature-title">صناعة مصرية</div><div class="feature-desc">منتج أصيل تحت رقابة جودة صارمة</div></div>
-    </div>
-  </div>
-</section>
-
-<!-- ============================== CONTACT ============================== -->
-<section id="contact" class="section-dark">
-  <div class="container">
-    <div class="section-header">
-      <h2 class="section-title white">تواصل معنا</h2>
-      <p class="section-desc muted">نحن هنا للإجابة على جميع استفساراتك وتلقي طلباتك</p>
-    </div>
-    <div class="contact-grid">
-      <a href="tel:+201001897864" class="contact-card phone-card">
-        <div class="contact-icon">📞</div>
-        <div class="contact-title">اتصل بنا</div>
-        <div class="contact-num num">01001897864</div>
-        <div class="contact-hint">متاحون طوال اليوم</div>
-      </a>
-      <a href="https://wa.me/201001897864" target="_blank" class="contact-card wa-card">
-        <div class="contact-icon">
-          <svg viewBox="0 0 24 24" width="48" height="48" fill="#25d366"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.09.543 4.05 1.49 5.757L0 24l6.345-1.663A11.945 11.945 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.797 9.797 0 01-4.996-1.371l-.358-.213-3.768.988.989-3.668-.233-.378A9.82 9.82 0 012.182 12C2.182 6.57 6.57 2.182 12 2.182S21.818 6.57 21.818 12 17.43 21.818 12 21.818z"/></svg>
+        <div class="stat-card">
+          <div class="stat-val num">99.9%</div>
+          <div class="stat-lbl">نقاء النحاس</div>
         </div>
-        <div class="contact-title">واتساب</div>
-        <div class="contact-num green num">01001897864</div>
-        <div class="contact-hint">رد سريع عبر واتساب</div>
-      </a>
-    
-    </div>
-    <div class="contact-bar">
-      <div>
-        <div class="contact-bar-title">مصر النور للكابلات</div>
-        <div class="contact-bar-desc">متخصصون في توفير أجود الكابلات الكهربائية</div>
       </div>
-      <div class="contact-bar-actions">
-        <a href="https://wa.me/201001897864" target="_blank" class="btn-wa-sm">📱 واتساب الآن</a>
-        <a href="tel:+201001897864" class="btn-call-sm">📞 اتصل الآن</a>
+      <div class="hero-cta">
+        <button class="btn-primary" onclick="scrollToSection('prices')">🛒 تصفح الأسعار واطلب الآن</button>
+        <a class="btn-whatsapp" href="https://wa.me/201001897864" target="_blank">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="#fff">
+            <path
+              d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z" />
+            <path
+              d="M12 0C5.373 0 0 5.373 0 12c0 2.09.543 4.05 1.49 5.757L0 24l6.345-1.663A11.945 11.945 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.797 9.797 0 01-4.996-1.371l-.358-.213-3.768.988.989-3.668-.233-.378A9.82 9.82 0 012.182 12C2.182 6.57 6.57 2.182 12 2.182S21.818 6.57 21.818 12 17.43 21.818 12 21.818z" />
+          </svg>
+          تواصل واتساب
+        </a>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- ============================== FOOTER ============================== -->
-<footer class="site-footer">
-  <div class="footer-logo">
-    <div class="logo-icon small">⚡</div>
-    <span>مصر النور للكابلات</span>
-  </div>
-  <p class="footer-desc">متخصصون في توفير أجود الكابلات الكهربائية<br>خصم <span class="accent" id="footer-discount"></span> على جميع الأصناف</p>
-  <div class="footer-links">
-    <button onclick="scrollToSection('home')">الرئيسية</button>
-    <button onclick="scrollToSection('products')">المنتجات</button>
-    <button onclick="scrollToSection('prices')">الأسعار</button>
-    <button onclick="scrollToSection('gallery')">معرض الصور</button>
-    <button onclick="scrollToSection('contact')">تواصل معنا</button>
-  </div>
-  <div class="footer-contact">
-    <a href="https://wa.me/201001897864" target="_blank" class="fc-btn green">📱 واتساب</a>
-    <a href="tel:+201001897864" class="fc-btn blue">📞 <span class="num">01001897864</span></a>
-  </div>
-  <div class="footer-copy">© <span class="num" id="footer-year"></span> مصر النور للكابلات — جميع الحقوق محفوظة</div>
-</footer>
 
-<!-- ============================== CART MODAL ============================== -->
-<div class="modal-overlay hidden" id="cart-modal">
-  <div class="modal-box" onclick="event.stopPropagation()">
-    <div class="modal-head" id="modal-head">
-      <div>
-        <div class="modal-title" id="modal-title">🛒 سلة التسوق</div>
-        <div class="modal-sub" id="modal-sub"></div>
+
+  <!-- ============================== PRICE TABLE ============================== -->
+  <section id="prices" class="section-gray">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">قائمة أسعار اللفة (100 متر)</h2>
+        <p class="section-desc">جميع الأسعار بعد خصم <span class="red num" id="prices-discount"></span>% — أضف المنتجات
+          للسلة وأكد طلبك</p>
       </div>
-      <button class="modal-close-btn" onclick="closeCart()">✕</button>
+      <!-- Tabs -->
+      <div class="tabs" id="cat-tabs"></div>
+      <!-- Table Card -->
+      <div class="table-card">
+        <div class="table-header" id="table-header"></div>
+        <div class="table-wrap">
+          <table class="price-table" id="price-table">
+            <thead>
+              <tr>
+                <th class="text-right">المقاس</th>
+                <th>السعر الأساسي (ج.م)</th>
+                <th class="golden">بعد الخصم (ج.م)</th>
+                <!-- <th>التوفير</th> -->
+                <th>إضافة للسلة</th>
+              </tr>
+            </thead>
+            <tbody id="price-tbody"></tbody>
+          </table>
+        </div>
+        <div class="table-footer" id="table-footer"></div>
+      </div>
     </div>
-    <div class="modal-body" id="modal-body"></div>
-  </div>
-</div>
-
-<!-- ============================== LIGHTBOX ============================== -->
-<div class="modal-overlay hidden" id="lightbox" onclick="closeLightbox()">
-  <div class="lightbox-box" onclick="event.stopPropagation()">
-    <img id="lb-img" src="" alt="" />
-    <div class="lb-info">
-      <div id="lb-title" class="lb-title"></div>
-      <div id="lb-desc" class="lb-desc"></div>
+  </section>
+  <!-- ============================== PRODUCTS OVERVIEW ============================== -->
+  <section id="products" class="section-white">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">أصنافنا المتوفرة</h2>
+        <p class="section-desc"><span class="num">9</span> أصناف متوفرة — خصم <span class="accent"
+            id="products-discount"></span> على جميع الأصناف</p>
+      </div>
+      <div class="cards-grid" id="categories-grid"></div>
     </div>
-    <button class="lb-close" onclick="closeLightbox()">✕</button>
-    <button class="lb-prev" onclick="lbPrev()">← السابق</button>
-    <button class="lb-next" onclick="lbNext()">التالي →</button>
+  </section>
+
+  <!-- ============================== GALLERY ============================== -->
+  <section id="gallery" class="section-white">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">معرض منتجاتنا</h2>
+        <p class="section-desc">تعرف على جودة منتجاتنا من الكابلات الكهربائية المصرية</p>
+      </div>
+      <div class="gallery-grid">
+        <div class="gallery-card" onclick="openLightbox(0)">
+          <img src="../images/product1.jpg" alt="كابل نحاس 6مم" />
+          <div class="gallery-overlay">
+            <div class="gallery-title">كابل نحاس 6 مم²</div>
+            <div class="gallery-desc">كابل مقاوم للحريق — نحاس مستورد بدرجة نقاء 99.9%</div>
+          </div>
+          <div class="gallery-zoom">🔍 تكبير</div>
+        </div>
+        <div class="gallery-card" onclick="openLightbox(1)">
+          <img src="../images/product2.jpg" alt="مخزن الكابلات" />
+          <div class="gallery-overlay">
+            <div class="gallery-title">مخزن الكابلات</div>
+            <div class="gallery-desc">مخزن متكامل بجميع أنواع وأحجام الكابلات</div>
+          </div>
+          <div class="gallery-zoom">🔍 تكبير</div>
+        </div>
+        <div class="gallery-card" onclick="openLightbox(2)">
+          <img src="../images/product3.jpg" alt="نحاس عالي النقاء" />
+          <div class="gallery-overlay">
+            <div class="gallery-title">نحاس عالي النقاء</div>
+            <div class="gallery-desc">مقطع عرضي لكابل النحاس بدرجة نقاء 99.9%</div>
+          </div>
+          <div class="gallery-zoom">🔍 تكبير</div>
+        </div>
+      </div>
+      <!-- Features -->
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon">🛡️</div>
+          <div class="feature-title">مقاوم للحريق</div>
+          <div class="feature-desc">كابلات مصممة لتحمل درجات الحرارة العالية</div>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🥇</div>
+          <div class="feature-title">جودة مضمونة</div>
+          <div class="feature-desc">نحاس مستورد بدرجة نقاء تصل 99.9%</div>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">📏</div>
+          <div class="feature-title">لفة 100 متر</div>
+          <div class="feature-desc">كل لفة 100 متر معيارية مع تسامح دقيق</div>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🏭</div>
+          <div class="feature-title">صناعة مصرية</div>
+          <div class="feature-desc">منتج أصيل تحت رقابة جودة صارمة</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================== CONTACT ============================== -->
+  <section id="contact" class="section-dark">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title white">تواصل معنا</h2>
+        <p class="section-desc muted">نحن هنا للإجابة على جميع استفساراتك وتلقي طلباتك</p>
+      </div>
+      <div class="contact-grid">
+        <a href="tel:+201001897864" class="contact-card phone-card">
+          <div class="contact-icon">📞</div>
+          <div class="contact-title">اتصل بنا</div>
+          <div class="contact-num num">01001897864</div>
+          <div class="contact-hint">متاحون طوال اليوم</div>
+        </a>
+        <a href="https://wa.me/201001897864" target="_blank" class="contact-card wa-card">
+          <div class="contact-icon">
+            <svg viewBox="0 0 24 24" width="48" height="48" fill="#25d366">
+              <path
+                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z" />
+              <path
+                d="M12 0C5.373 0 0 5.373 0 12c0 2.09.543 4.05 1.49 5.757L0 24l6.345-1.663A11.945 11.945 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.797 9.797 0 01-4.996-1.371l-.358-.213-3.768.988.989-3.668-.233-.378A9.82 9.82 0 012.182 12C2.182 6.57 6.57 2.182 12 2.182S21.818 6.57 21.818 12 17.43 21.818 12 21.818z" />
+            </svg>
+          </div>
+          <div class="contact-title">واتساب</div>
+          <div class="contact-num green num">01001897864</div>
+          <div class="contact-hint">رد سريع عبر واتساب</div>
+        </a>
+
+      </div>
+      <div class="contact-bar">
+        <div>
+          <div class="contact-bar-title">مصر النور للكابلات</div>
+          <div class="contact-bar-desc">متخصصون في توفير أجود الكابلات الكهربائية</div>
+        </div>
+        <div class="contact-bar-actions">
+          <a href="https://wa.me/201001897864" target="_blank" class="btn-wa-sm">📱 واتساب الآن</a>
+          <a href="tel:+201001897864" class="btn-call-sm">📞 اتصل الآن</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================== FOOTER ============================== -->
+  <footer class="site-footer">
+    <div class="footer-logo">
+      <div class="logo-icon small">⚡</div>
+      <span>مصر النور للكابلات</span>
+    </div>
+    <p class="footer-desc">متخصصون في توفير أجود الكابلات الكهربائية<br>خصم <span class="accent"
+        id="footer-discount"></span> على جميع الأصناف</p>
+    <div class="footer-links">
+      <button onclick="scrollToSection('home')">الرئيسية</button>
+      <button onclick="scrollToSection('products')">المنتجات</button>
+      <button onclick="scrollToSection('prices')">الأسعار</button>
+      <button onclick="scrollToSection('gallery')">معرض الصور</button>
+      <button onclick="scrollToSection('contact')">تواصل معنا</button>
+    </div>
+    <div class="footer-contact">
+      <a href="https://wa.me/201001897864" target="_blank" class="fc-btn green">📱 واتساب</a>
+      <a href="tel:+201001897864" class="fc-btn blue">📞 <span class="num">01001897864</span></a>
+    </div>
+    <div class="footer-copy">© <span class="num" id="footer-year"></span> مصر النور للكابلات — جميع الحقوق محفوظة</div>
+  </footer>
+
+  <!-- ============================== CART MODAL ============================== -->
+  <div class="modal-overlay hidden" id="cart-modal">
+    <div class="modal-box" onclick="event.stopPropagation()">
+      <div class="modal-head" id="modal-head">
+        <div>
+          <div class="modal-title" id="modal-title">🛒 سلة التسوق</div>
+          <div class="modal-sub" id="modal-sub"></div>
+        </div>
+        <button class="modal-close-btn" onclick="closeCart()">✕</button>
+      </div>
+      <div class="modal-body" id="modal-body"></div>
+    </div>
   </div>
-</div>
 
-<!-- ============================== WHATSAPP FLOAT ============================== -->
-<a class="whatsapp-float" href="https://wa.me/201001897864" target="_blank" title="تواصل عبر واتساب">
-  <svg viewBox="0 0 24 24" width="30" height="30" fill="#fff"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.09.543 4.05 1.49 5.757L0 24l6.345-1.663A11.945 11.945 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.797 9.797 0 01-4.996-1.371l-.358-.213-3.768.988.989-3.668-.233-.378A9.82 9.82 0 012.182 12C2.182 6.57 6.57 2.182 12 2.182S21.818 6.57 21.818 12 17.43 21.818 12 21.818z"/></svg>
-</a>
+  <!-- ============================== LIGHTBOX ============================== -->
+  <div class="modal-overlay hidden" id="lightbox" onclick="closeLightbox()">
+    <div class="lightbox-box" onclick="event.stopPropagation()">
+      <img id="lb-img" src="" alt="" />
+      <div class="lb-info">
+        <div id="lb-title" class="lb-title"></div>
+        <div id="lb-desc" class="lb-desc"></div>
+      </div>
+      <button class="lb-close" onclick="closeLightbox()">✕</button>
+      <button class="lb-prev" onclick="lbPrev()">← السابق</button>
+      <button class="lb-next" onclick="lbNext()">التالي →</button>
+    </div>
+  </div>
 
-<script src="script.js"></script>
+  <!-- ============================== WHATSAPP FLOAT ============================== -->
+  <a class="whatsapp-float" href="https://wa.me/201001897864" target="_blank" title="تواصل عبر واتساب">
+    <svg viewBox="0 0 24 24" width="30" height="30" fill="#fff">
+      <path
+        d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z" />
+      <path
+        d="M12 0C5.373 0 0 5.373 0 12c0 2.09.543 4.05 1.49 5.757L0 24l6.345-1.663A11.945 11.945 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.797 9.797 0 01-4.996-1.371l-.358-.213-3.768.988.989-3.668-.233-.378A9.82 9.82 0 012.182 12C2.182 6.57 6.57 2.182 12 2.182S21.818 6.57 21.818 12 17.43 21.818 12 21.818z" />
+    </svg>
+  </a>
+
+  <!-- ✅ Cart Float Button -->
+<button class="cart-float" onclick="openCart()" title="عرض السلة">    <!-- SVG سلة -->
+    <svg viewBox="0 0 24 24" width="28" height="28" fill="#1e2b1e">
+      <path
+        d="M7 4h-2l-1 2h2l3.6 7.59-1.35 2.44C7.52 17.37 8.48 19 10 19h9v-2h-9l1.1-2h6.45c.75 0 1.41-.41 1.75-1.03L23 6H6" />
+      <circle cx="10.5" cy="20.5" r="1.5" />
+      <circle cx="17.5" cy="20.5" r="1.5" />
+    </svg>
+  
+    <span class="cart-badge" id="cartBadge">0</span>
+  </button>
+
+  <script src="script.js"></script>
 </body>
+
 </html>

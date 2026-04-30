@@ -18,6 +18,58 @@ const TELEGRAM_CHAT_ID = '8362428874';
 // بيانات المنتجات الكاملة
 // =====================================================
 const categories = [
+  
+   {
+    id: 'nehyas',
+    name: 'نحاس معزيل',
+    unit: 'مم²',
+    // icon: '🟠',
+    color: '#b45309',
+    items: [
+      { size: '1', basePrice: 855 },
+      { size: '1.5', basePrice: 1240 },
+      { size: '2', basePrice: 1640 },
+      { size: '2.5', basePrice: 2000 },
+      { size: '3', basePrice: 2425 },
+      { size: '4', basePrice: 3170 },
+      { size: '6', basePrice: 4750 },
+      { size: '10', basePrice: 7800 },
+      { size: '16', basePrice: 12500 },
+      { size: '25', basePrice: 19600 },
+      { size: '35', basePrice: 26800 },
+      { size: '50', basePrice: 39000 },
+      { size: '70', basePrice: 54500 },
+      { size: '95', basePrice: 75000 },
+      { size: '120', basePrice: 95000 },
+    ],
+  },
+  
+  {
+    id: 'shaar',
+    name: 'نحاس شعر ',
+    unit: 'مم²',
+    // icon: '🔶',
+    color: '#d97706',
+    items: [
+      { size: '1', basePrice: 875 },
+      { size: '1.5', basePrice: 1265 },
+      { size: '2', basePrice: 1670 },
+      { size: '2.5', basePrice: 2050 },
+      { size: '3', basePrice: 2470 },
+      { size: '4', basePrice: 3230 },
+      { size: '6', basePrice: 4820 },
+      { size: '10', basePrice: 7950 },
+      { size: '16', basePrice: 12800 },
+      { size: '25', basePrice: 20000 },
+      { size: '35', basePrice: 27300 },
+      { size: '50', basePrice: 39800 },
+      { size: '70', basePrice: 55700 },
+      { size: '95', basePrice: 77000 },
+      { size: '120', basePrice: 98000 },
+    ],
+  },
+  
+  
   {
     id: 'thermo4',
     name: 'ترمو (4 طرف)',
@@ -40,71 +92,28 @@ const categories = [
       { size: '35×4', basePrice: 127000 },
     ],
   },
-  {
-    id: 'nehyas',
-    name: 'نحاس',
+
+   {
+    id: 'thermo3',
+    name: 'ترمو (3 طرف)',
     unit: 'مم²',
-    // icon: '🟠',
-    color: '#b45309',
+    // icon: '🟢',
+    color: '#15803d',
     items: [
-      { size: '1', basePrice: 855 },
-      { size: '1.5', basePrice: 1240 },
-      { size: '2', basePrice: 1640 },
-      { size: '2.5', basePrice: 2000 },
-      { size: '3', basePrice: 2425 },
-      { size: '4', basePrice: 3170 },
-      { size: '6', basePrice: 4750 },
-      { size: '10', basePrice: 7800 },
-      { size: '16', basePrice: 12500 },
-      { size: '25', basePrice: 19600 },
-      { size: '35', basePrice: 26800 },
-      { size: '50', basePrice: 39000 },
-      { size: '70', basePrice: 54500 },
-      { size: '95', basePrice: 75000 },
-      { size: '120', basePrice: 95000 },
+      { size: '0.5×3', basePrice: 2020 },
+      { size: '0.75×3', basePrice: 3100 },
+      { size: '1×3', basePrice: 3350 },
+      { size: '1.5×3', basePrice: 4850 },
+      { size: '2×3', basePrice: 6000 },
+      { size: '2.5×3', basePrice: 8000 },
+      { size: '3×3', basePrice: 8700 },
+      { size: '4×3', basePrice: 11800 },
+      { size: '6×3', basePrice: 16700 },
+      { size: '10×3', basePrice: 27200 },
+      { size: '16×3', basePrice: 43000 },
     ],
   },
-  {
-    id: 'shaar',
-    name: 'شعر',
-    unit: 'مم²',
-    // icon: '🔶',
-    color: '#d97706',
-    items: [
-      { size: '1', basePrice: 875 },
-      { size: '1.5', basePrice: 1265 },
-      { size: '2', basePrice: 1670 },
-      { size: '2.5', basePrice: 2050 },
-      { size: '3', basePrice: 2470 },
-      { size: '4', basePrice: 3230 },
-      { size: '6', basePrice: 4820 },
-      { size: '10', basePrice: 7950 },
-      { size: '16', basePrice: 12800 },
-      { size: '25', basePrice: 20000 },
-      { size: '35', basePrice: 27300 },
-      { size: '50', basePrice: 39800 },
-      { size: '70', basePrice: 55700 },
-      { size: '95', basePrice: 77000 },
-      { size: '120', basePrice: 98000 },
-    ],
-  },
-  {
-    id: 'aluminium',
-    name: 'الألمنيوم',
-    unit: 'مم²',
-    // icon: '⚡',
-    color: '#6b7280',
-    items: [
-      { size: '10', basePrice: 1200 },
-      { size: '16', basePrice: 1820 },
-      { size: '25', basePrice: 2750 },
-      { size: '35', basePrice: 3750 },
-      { size: '50', basePrice: 5450 },
-      { size: '70', basePrice: 7650 },
-      { size: '95', basePrice: 10200 },
-      { size: '120', basePrice: 12900 },
-    ],
-  },
+
   {
     id: 'thermo2',
     name: 'ترمو (2 طرف)',
@@ -125,29 +134,30 @@ const categories = [
       { size: '16×2', basePrice: 29000 },
     ],
   },
+ 
+  
   {
-    id: 'thermo3',
-    name: 'ترمو (3 طرف)',
+    id: 'aluminium',
+    name: 'الألمنيوم',
     unit: 'مم²',
-      // icon: '🟢',
-    color: '#15803d',
+    // icon: '⚡',
+    color: '#6b7280',
     items: [
-      { size: '0.5×3', basePrice: 2020 },
-      { size: '0.75×3', basePrice: 3100 },
-      { size: '1×3', basePrice: 3350 },
-      { size: '1.5×3', basePrice: 4850 },
-      { size: '2×3', basePrice: 6000 },
-      { size: '2.5×3', basePrice: 8000 },
-      { size: '3×3', basePrice: 8700 },
-      { size: '4×3', basePrice: 11800 },
-      { size: '6×3', basePrice: 16700 },
-      { size: '10×3', basePrice: 27200 },
-      { size: '16×3', basePrice: 43000 },
+      { size: '10', basePrice: 1200 },
+      { size: '16', basePrice: 1820 },
+      { size: '25', basePrice: 2750 },
+      { size: '35', basePrice: 3750 },
+      { size: '50', basePrice: 5450 },
+      { size: '70', basePrice: 7650 },
+      { size: '95', basePrice: 10200 },
+      { size: '120', basePrice: 12900 },
     ],
   },
+  
+ 
   {
     id: 'smaaat',
-    name: 'سماعات / محدول',
+    name: 'سماعات / مجدول',
     unit: 'مم²',
     // icon: '🎙️',
     color: '#7c3aed',
@@ -248,10 +258,10 @@ function clearCart() {
   updateCartBadge();
 }
 
-function totalItems()     { return cart.reduce((s, c) => s + c.qty, 0); }
-function totalPrice()     { return cart.reduce((s, c) => s + c.discountedPrice * c.qty, 0); }
+function totalItems() { return cart.reduce((s, c) => s + c.qty, 0); }
+function totalPrice() { return cart.reduce((s, c) => s + c.discountedPrice * c.qty, 0); }
 function totalBasePrice() { return cart.reduce((s, c) => s + c.basePrice * c.qty, 0); }
-function totalSavings()   { return totalBasePrice() - totalPrice(); }
+function totalSavings() { return totalBasePrice() - totalPrice(); }
 
 function updateCartBadge() {
   const badge = document.getElementById('cart-badge');
@@ -284,14 +294,14 @@ function closeCart() {
   }
 }
 
-document.getElementById('cart-modal').addEventListener('click', function(e) {
+document.getElementById('cart-modal').addEventListener('click', function (e) {
   if (e.target === this) closeCart();
 });
 
 function renderCartBody() {
   const modalTitle = document.getElementById('modal-title');
-  const modalSub   = document.getElementById('modal-sub');
-  const body       = document.getElementById('modal-body');
+  const modalSub = document.getElementById('modal-sub');
+  const body = document.getElementById('modal-body');
 
   if (cartStep === 'cart') {
     modalTitle.textContent = '🛒 سلة التسوق';
@@ -421,10 +431,10 @@ function goBackToCart() {
   // Save form data
   const f = document.getElementById('checkout-form');
   if (f) {
-    formData.name    = f.name.value;
-    formData.phone   = f.phone.value;
+    formData.name = f.name.value;
+    formData.phone = f.phone.value;
     formData.address = f.address.value;
-    formData.notes   = f.notes.value;
+    formData.notes = f.notes.value;
   }
   cartStep = 'cart';
   renderCartBody();
@@ -433,10 +443,10 @@ function goBackToCart() {
 async function submitOrder(e) {
   e.preventDefault();
   const f = e.target;
-  formData.name    = f.name.value;
-  formData.phone   = f.phone.value;
+  formData.name = f.name.value;
+  formData.phone = f.phone.value;
   formData.address = f.address ? f.address.value : '';
-  formData.notes   = f.notes ? f.notes.value : '';
+  formData.notes = f.notes ? f.notes.value : '';
 
   const btn = document.getElementById('submit-btn');
   btn.disabled = true;
@@ -448,7 +458,7 @@ async function submitOrder(e) {
   lines.push(`👤 *الاسم:* ${formData.name}`);
   lines.push(`📞 *الهاتف:* ${formData.phone}`);
   if (formData.address) lines.push(`📍 *العنوان:* ${formData.address}`);
-  if (formData.notes)   lines.push(`📝 *ملاحظات:* ${formData.notes}`);
+  if (formData.notes) lines.push(`📝 *ملاحظات:* ${formData.notes}`);
   lines.push('─────────────────────');
   lines.push('📦 *تفاصيل الطلب:*');
   cart.forEach((item, i) => {
@@ -549,6 +559,10 @@ function renderTable() {
 
 function handleAddBtn(catId, size, btnId) {
   addToCart(catId, size);
+
+  // ✅ تحديث عداد الزرار العايم
+  updateFloatingCartCount();
+
   const btn = document.getElementById(btnId);
   if (btn) {
     btn.textContent = '✓ تمت الإضافة';
@@ -559,6 +573,21 @@ function handleAddBtn(catId, size, btnId) {
     }, 1800);
   }
 }
+
+function updateFloatingCartCount() {
+
+  const floatingBadge = document.getElementById("cartBadge");
+
+  // ✅ هات كل عناصر السلة من النظام عندك
+  const cartItems = document.querySelectorAll('.cart-badge');
+
+  if (floatingBadge) {
+    floatingBadge.innerText = cartItems.length;
+  }
+}
+
+
+
 
 function switchTab(catId) {
   activeTabId = catId;
@@ -616,17 +645,17 @@ function renderCategoryCards() {
 // =====================================================
 const galleryImages = [
   { src: './images/product1.jpg', title: 'كابل نحاس 6 مم²', desc: 'كابل مقاوم للحريق — نحاس مستورد بدرجة نقاء 99.9%' },
-  { src: '../images/product2.jpg', title: 'مخزن الكابلات',   desc: 'مخزن متكامل بجميع أنواع وأحجام الكابلات' },
+  { src: '../images/product2.jpg', title: 'مخزن الكابلات', desc: 'مخزن متكامل بجميع أنواع وأحجام الكابلات' },
   { src: '../images/product3.jpg', title: 'نحاس عالي النقاء', desc: 'مقطع عرضي لكابل النحاس بدرجة نقاء 99.9%' },
 ];
 let lbIndex = 0;
 
 function openLightbox(i) {
   lbIndex = i;
-  const img  = galleryImages[i];
-  document.getElementById('lb-img').src   = img.src;
+  const img = galleryImages[i];
+  document.getElementById('lb-img').src = img.src;
   document.getElementById('lb-title').textContent = img.title;
-  document.getElementById('lb-desc').textContent  = img.desc;
+  document.getElementById('lb-desc').textContent = img.desc;
   document.getElementById('lightbox').classList.remove('hidden');
 }
 
@@ -654,7 +683,7 @@ function scrollToSection(id) {
 
 // Nav links
 document.querySelectorAll('.nav-btn[data-section]').forEach(btn => {
-  btn.addEventListener('click', function() {
+  btn.addEventListener('click', function () {
     scrollToSection(this.dataset.section);
     // Mobile menu close
     document.getElementById('mobile-nav').classList.add('hidden');
@@ -663,7 +692,7 @@ document.querySelectorAll('.nav-btn[data-section]').forEach(btn => {
 });
 
 // Mobile menu toggle
-document.getElementById('mobile-menu-btn').addEventListener('click', function() {
+document.getElementById('mobile-menu-btn').addEventListener('click', function () {
   const nav = document.getElementById('mobile-nav');
   nav.classList.toggle('hidden');
   nav.classList.toggle('active');
@@ -692,12 +721,12 @@ document.getElementById('cart-btn').addEventListener('click', openCart);
 // =====================================================
 function initDiscountLabels() {
   const els = {
-    'header-discount':   `${DISCOUNT_PERCENT}`,
-    'hero-discount':     `<span class="accent num">${DISCOUNT_PERCENT}%</span>`,
-    'stat-discount':     `${DISCOUNT_PERCENT}%`,
+    'header-discount': `${DISCOUNT_PERCENT}`,
+    'hero-discount': `<span class="accent num">${DISCOUNT_PERCENT}%</span>`,
+    'stat-discount': `${DISCOUNT_PERCENT}%`,
     'products-discount': `<span class="accent num">${DISCOUNT_PERCENT}%</span>`,
-    'prices-discount':   `${DISCOUNT_PERCENT}`,
-    'footer-discount':   `<span class="num">${DISCOUNT_PERCENT}%</span>`,
+    'prices-discount': `${DISCOUNT_PERCENT}`,
+    'footer-discount': `<span class="num">${DISCOUNT_PERCENT}%</span>`,
   };
   for (const [id, val] of Object.entries(els)) {
     const el = document.getElementById(id);
@@ -709,9 +738,19 @@ function initDiscountLabels() {
 // =====================================================
 // Boot
 // =====================================================
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
   initDiscountLabels();
   renderCategoryCards();
   renderTabs();
   renderTable();
 });
+
+function updateFloatingCartCount() {
+
+  const floatingBadge = document.getElementById("cartBadge");
+
+  if (typeof cart !== "undefined") {
+    floatingBadge.innerText = cart.length;
+  }
+
+}
